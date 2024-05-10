@@ -36,7 +36,10 @@ H/W SELinux - когда все запрещено
 >update add www.ddns.lab. 60 A 192.168.50.15
 >send
 ```nsupdate -k /etc/named.zonetransfer.key
+nsupdate -k /etc/named.zonetransfer.key
+server 192.168.50.10
 zone ddns.lab 
-alert(s);
+update add www.ddns.lab. 60 A 192.168.50.15
+send 
 ```
 
