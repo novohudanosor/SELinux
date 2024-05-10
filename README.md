@@ -18,5 +18,13 @@ H/W SELinux - когда все запрещено
 16.   Добавляем наш не стандартный порт  ``` semanage port -a -t http_port_t -p tcp 4881  ```
 17.   Запускаем ngnix и проверяем что все работает
 18.   ![alt text](./Pictures/6.png)
-19.   
-20.   
+19.    Удалим наш не стандартный порт  ``` semanage port -d -t http_port_t -p tcp 4881  ```
+20. **Разрешим в SELinux работу nginx на порту TCP 4881 c помощью формирования и установки модуля SELinux**
+21.    ``` systemctl start nginx  ``` -  не запускается , так как SELinux продолжает его блокировать. Посмотрим логи SELinux, которые относятся к nginx
+22. Посмотрим логи SELinux, которые относятся к nginx   ``` grep nginx /var/log/audit/audit.log  ```
+23.  Воспользуемся утилитой audit2allow для того, чтобы на основе логов SELinux сделать модуль, разрешающий работу nginx на нестандартном порту
+24.   ``` grep nginx /var/log/audit/audit.log | audit2allow -M nginx  ```
+25.   Audit2allow сформировала команду  ``` semodule -i nginx.pp  ``` после выполнения которой можно запускать nginx и проверять status
+26.    ![alt text](./Pictures/7.png)
+27.
+28.   
