@@ -26,5 +26,8 @@ H/W SELinux - когда все запрещено
 24.   ``` grep nginx /var/log/audit/audit.log | audit2allow -M nginx  ```
 25.   Audit2allow сформировала команду  ``` semodule -i nginx.pp  ``` после выполнения которой можно запускать nginx и проверять status
 26.    ![alt text](./Pictures/7.png)
-27.
-28.   
+## Обеспечение работоспособности приложения при включенном SELinux
+1.  Выполним клонирование репозитория:  ``` git clone https://github.com/mbfx/otus-linux-adm.git  ```  **vagrant up** из данного каталога развернет стенд с 2-мя виртуальными машинами
+2.  ![alt text](./Pictures/8.png)
+3.  
+   
