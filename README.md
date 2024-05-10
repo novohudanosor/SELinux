@@ -30,10 +30,10 @@ H/W SELinux - когда все запрещено
 1.  Выполним клонирование репозитория:  ``` git clone https://github.com/mbfx/otus-linux-adm.git  ```  **vagrant up** из данного каталога развернет стенд с 2-мя виртуальными машинами
 2.  Подключаемся к клиенту ``` vagrant ssh client ```
 3.   Попробуем внести изменения в зону: ``` nsupdate -k /etc/named.zonetransfer.key ```
-nsupdate -k /etc/named.zonetransfer.key
-server 192.168.50.10
-zone ddns.lab 
-update add www.ddns.lab. 60 A 192.168.50.15
-send
+>nsupdate -k /etc/named.zonetransfer.key
+>server 192.168.50.10
+>zone ddns.lab 
+>update add www.ddns.lab. 60 A 192.168.50.15
+>send
 
 
