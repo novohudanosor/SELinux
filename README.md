@@ -31,11 +31,14 @@ H/W SELinux - когда все запрещено
 2.  Подключаемся к клиенту ``` vagrant ssh client ```
 3.   Попробуем внести изменения в зону: ``` nsupdate -k /etc/named.zonetransfer.key ```
 
-```nsupdate -k /etc/named.zonetransfer.key
-nsupdate -k /etc/named.zonetransfer.key
-server 192.168.50.10
-zone ddns.lab 
-update add www.ddns.lab. 60 A 192.168.50.15
-send 
-```
-ошибка ``` update failed: SERVFAIL ``` 
+1. Далее клонируем репозиторий **git clone https://github.com/mbfx/otus-linux-adm.git**
+2. выполняем все как в методичке, создаем Vagrantfile , поднимаются 2 машины. Ansible отрабатывает.
+3.  ![alt text](./Pictures/11.png)
+4.  Далее должны внести изменения в зону: **nsupdate -k /etc/named.zonetransfer.key** и получить ошибку как на скрине ниже
+5.   ![alt text](./Pictures/12.png)
+6.   Получаю по факту другую ошибку.
+7.   ![alt text](./Pictures/13.png)
+8.   ну тут понятно что проблема с сетью, стенд развернул 2 машины с одинаковым IP адресом. пробовал настраивать руками- не получается.
+9.   ![alt text](./Pictures/14.png)
+10.   Уже пробовал разные хостовые ос менять, пока решения у меня нет. помощь в чате телеграм просил- ну видимо у всех как то получается. у меня на данный момент решения нет. настраивал рабочее место как в методичке https://docs.google.com/document/d/1fZUXL30bDhJEQpDQgtfv3Nj4WYWto98AaYlC1vJ2LkQ/edit?usp=sharing    Ubuntu 22.10 Vagrant 2.4.1  все разворачивалось всегда прекрасно.  может когда-то разбирусь, пока 3 дня потрачено- решения нет.
+ 
