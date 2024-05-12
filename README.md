@@ -34,7 +34,7 @@ H/W SELinux - когда все запрещено
 1. Далее клонируем репозиторий **git clone https://github.com/mbfx/otus-linux-adm.git**
 2. выполняем все как в методичке, создаем Vagrantfile , поднимаются 2 машины. Ansible отрабатывает.
 3.  ![alt text](./Pictures/11.png)
-4.  Далее должны внести изменения в зону: **nsupdate -k /etc/named.zonetransfer.key** и получить ошибку как на скрине ниже
+4.  Далее должны внести изменения в зону: **nsupdate -k /etc/named.zonetransfer.key** и получаем ошибку 
 5.   ![alt text](./Pictures/12.png)
 6.   Изменения внести не получилось.   На клиенте выполняем команду ``` audit2why < /var/log/audit/audit.log ```  - вывод пустой. Эту же команду выполняем на ns01 вывод есть
 7.   ![alt text](./Pictures/13.png)
